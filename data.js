@@ -35,7 +35,7 @@ const AppData = {
         isActive: true, // アンケートを実施中の場合は true、実施していない場合は false に書き換えてください
         title: "多賀町親交自治会総会への参加確認", // アンケートのタイトル
         description: "5月17日(日)の多賀町親交自治会総会（花園町コミュニティセンターにて開催）にご参加いただけますか？以下のボタンから回答をお願いします。", // アンケートの説明文
-        url: "#" // ここに作成したアンケート用GoogleフォームのURLを貼り付けます（例: "https://forms.gle/..."）
+        url: "https://docs.google.com/forms/d/e/1FAIpQLSdih3bWp_ZJIxeBLDtXZ8F8pMvnG4bUHn5Vl03axha20-PRPQ/viewform?usp=publish-editor" // ここに作成したアンケート用GoogleフォームのURLを貼り付けます（例: "https://forms.gle/..."）
     },
 
     // ✉️ 役員連絡先データ
