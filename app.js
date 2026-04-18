@@ -91,14 +91,28 @@ function renderCalendar() {
 
 // 3. アンケート画面の生成
 function renderPolls() {
+    // アンケートを実施していない場合
+    if (!AppData.poll.isActive) {
+        return `
+            <div class="page-title" style="margin-bottom:1rem;">
+                <h2 style="font-size: var(--text-xl);">🗳️ アンケート</h2>
+            </div>
+            <div class="card" style="text-align: center;">
+                <p style="font-size: var(--text-base); margin-bottom: 1rem;">現在実施中のアンケートはありません。</p>
+            </div>
+        `;
+    }
+
+    // アンケートを実施中の場合
     return `
         <div class="page-title" style="margin-bottom:1rem;">
             <h2 style="font-size: var(--text-xl);">🗳️ アンケート</h2>
         </div>
         <div class="card" style="text-align: center;">
-            <p style="font-size: var(--text-base); margin-bottom: 1rem;">現在実施中のアンケートがあります。</p>
+            <div class="card-title">${AppData.poll.title}</div>
+            <p style="font-size: var(--text-base); margin-bottom: 1rem;">${AppData.poll.description}</p>
             <p style="font-size: var(--text-sm); color: var(--text-muted); margin-bottom: 1.5rem;">※Googleフォームが開きます</p>
-            <a href="#" class="btn-large" style="text-decoration: none; display: inline-block;">敬老会への参加確認に回答する</a>
+            <a href="${AppData.poll.url}" class="btn-large" style="text-decoration: none; display: inline-block;">アンケートに回答する</a>
         </div>
     `;
 }
@@ -115,14 +129,14 @@ function renderContact() {
                 町内のみんなに共有したい情報（お裾分け、迷子のお知らせ、イベント告知など）がある場合は、こちらから役員へご連絡ください。確認後、お知らせ一覧に掲載いたします。
             </p>
             <p style="font-size: var(--text-sm); color: var(--text-muted); margin-bottom: 1.5rem;">※専用の連絡フォーム（Googleフォーム）が開きます</p>
-            <a href="#" class="btn-large" style="text-decoration: none; display: inline-block; text-align: center;">連絡フォームを開く</a>
+            <a href="${AppData.contact.formUrl}" class="btn-large" style="text-decoration: none; display: inline-block; text-align: center;">連絡フォームを開く</a>
         </div>
         <div class="card">
             <div class="card-title">お電話でのご連絡</div>
             <p style="font-size: var(--text-base); margin-bottom: 1rem;">
                 お急ぎの場合は、以下の連絡先（自治会長）までお電話ください。
             </p>
-            <a href="tel:0000000000" class="btn-large" style="text-decoration: none; display: inline-block; text-align: center; background: #666;">📞 090-XXXX-XXXX (会長)</a>
+            <a href="${AppData.contact.phoneUrl}" class="btn-large" style="text-decoration: none; display: inline-block; text-align: center; background: #666;">${AppData.contact.phoneTitle}</a>
         </div>
     `;
 }
