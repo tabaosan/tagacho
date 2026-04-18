@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>多賀町親交自治会</title>
+    <!-- 読みやすく、親しみやすいフォント (Zen Maru Gothic) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <!-- ヘッダー -->
+    <header class="app-header">
+        <h1>多賀町親交自治会</h1>
+    </header>
+
+    <!-- メインコンテンツ領域 -->
+    <main id="app-content">
+        <!-- ここに各画面のコンテンツがJSによって挿入されます -->
+    </main>
+
+    <!-- 下部ナビゲーション -->
+    <nav class="bottom-nav">
+        <button class="nav-btn active" data-target="home">
+            <span class="icon">📢</span>
+            <span class="label">お知らせ</span>
+        </button>
+        <button class="nav-btn" data-target="calendar">
+            <span class="icon">🗑️</span>
+            <span class="label">カレンダー</span>
+        </button>
+        <button class="nav-btn" data-target="polls">
+            <span class="icon">🗳️</span>
+            <span class="label">アンケート</span>
+        </button>
+        <button class="nav-btn" data-target="contact">
+            <span class="icon">✉️</span>
+            <span class="label">役員へ連絡</span>
+        </button>
+    </nav>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,192 @@
+/* Base Variables */
+:root {
+    --primary-color: #2E8B57; /* SeaGreen - 落ち着きがあり自然を感じる緑 */
+    --primary-light: #E8F5E9;
+    --text-main: #333333;
+    --text-muted: #666666;
+    --bg-main: #F4F7F6;
+    --card-bg: #FFFFFF;
+    --danger-color: #E53935;
+    
+    --font-family: 'Zen Maru Gothic', sans-serif;
+    --shadow-sm: 0 2px 8px rgba(0,0,0,0.05);
+    --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+    --shadow-lg: 0 8px 24px rgba(0,0,0,0.12);
+    --border-radius: 16px;
+    
+    /* 読みやすさのための大きなフォントサイズ設定 */
+    --text-sm: 0.95rem;
+    --text-base: 1.1rem;
+    --text-lg: 1.3rem;
+    --text-xl: 1.5rem;
+}
+
+/* Reset & Basic Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: transparent; /* スマホタップ時の青いハイライトを消す */
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    line-height: 1.6;
+    padding-bottom: 80px; /* ナビゲーションの高さ分余白 */
+    overflow-x: hidden;
+}
+
+/* Header */
+.app-header {
+    background: var(--primary-color);
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: var(--shadow-md);
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+
+.app-header h1 {
+    font-size: var(--text-lg);
+    font-weight: 700;
+    letter-spacing: 0.05em;
+}
+
+/* Main Content Container */
+main {
+    padding: 1rem;
+    max-width: 600px;
+    margin: 0 auto;
+    min-height: calc(100vh - 140px);
+    animation: fadeIn 0.4s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Cards (共通コンポーネント) */
+.card {
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    padding: 1.25rem;
+    margin-bottom: 1rem;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:active {
+    transform: scale(0.98);
+}
+
+.card-title {
+    font-size: var(--text-lg);
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+}
+
+.card-date {
+    font-size: var(--text-sm);
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
+}
+
+/* Tags / Badges */
+.badge {
+    display: inline-block;
+    padding: 0.2rem 0.6rem;
+    border-radius: 20px;
+    font-size: var(--text-sm);
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+.badge.important {
+    background: #FFEBEE;
+    color: var(--danger-color);
+}
+.badge.normal {
+    background: var(--primary-light);
+    color: var(--primary-color);
+}
+
+/* Bottom Navigation */
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-around;
+    padding: 0.5rem 0;
+    padding-bottom: calc(0.5rem + env(safe-area-inset-bottom));
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.05);
+    z-index: 100;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.nav-btn {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 25%;
+    padding: 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.nav-btn .icon {
+    font-size: 1.5rem;
+    margin-bottom: 0.2rem;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.nav-btn .label {
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.nav-btn.active {
+    color: var(--primary-color);
+}
+
+.nav-btn.active .icon {
+    transform: scale(1.2);
+}
+
+/* 押しやすい大きなボタン */
+.btn-large {
+    display: block;
+    width: 100%;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 1rem;
+    font-size: var(--text-base);
+    font-weight: 700;
+    margin-top: 1rem;
+    box-shadow: var(--shadow-sm);
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+    font-family: inherit;
+}
+
+.btn-large:active {
+    transform: scale(0.98);
+    background: #236d43;
+}
