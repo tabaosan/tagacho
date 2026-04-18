@@ -40,8 +40,8 @@ const AppData = {
 
     // ✉️ 役員連絡先データ
     contact: {
-        phoneTitle: "📞 090-1320-6471 (磯田)", // 電話ボタンの表示文字
-        phoneUrl: "tel:09013206471",          // 実際に電話をかける先の番号（ハイフンなし等）
+        phoneTitle: "📞 087-837-5719 (石野)", // 電話ボタンの表示文字
+        phoneUrl: "tel:0878375719",          // 実際に電話をかける先の番号（ハイフンなし等）
         formUrl: "https://docs.google.com/forms/d/e/1FAIpQLSeCtikpWe5Wraxv2xx8SWhUPc93_6SJPmj3_Co6-46ku8E0XA/viewform?usp=preview" // ここに作成した連絡用GoogleフォームのURLを貼り付けます
     }
 };
